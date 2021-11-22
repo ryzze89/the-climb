@@ -28,6 +28,8 @@ public class CharacterController : MonoBehaviour
         cam = GameObject.Find("Main Camera");
         myRigidBody = GetComponent<Rigidbody>();
         sprintTimer = maxSprint;
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     // Update is called once per frame
