@@ -22,13 +22,15 @@ public class CharacterController : MonoBehaviour
     public float maxSprint = 5.0f;
     float sprintTimer;
 
-    // Start is called before the first frame update
+    Animator myAnim;
     void Start()
     {
         cam = GameObject.Find("Main Camera");
         myRigidBody = GetComponent<Rigidbody>();
         sprintTimer = maxSprint;
         Cursor.lockState = CursorLockMode.Locked;
+
+        myAnim = GetComponentInChildren<Animator>();
 
     }
 
@@ -68,6 +70,11 @@ public class CharacterController : MonoBehaviour
         }
 
         sprintTimer = Mathf.Clamp(sprintTimer, 0.0f, maxSprint);
+
+        myAnim.SetFloat("speed", newVelocity.magnitude);
+
+        myAnim.SetBool("isOnGround", isOnGround);
+        myAnim.SetTrigger("jumping");
     }
 
 

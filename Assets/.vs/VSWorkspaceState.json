@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\scripts"
   ],
-  "SelectedNode": "\\CharacterController.cs",
+  "SelectedNode": "\\scripts\\CharacterController.cs",
   "PreviewInSolutionExplorer": false
 }
