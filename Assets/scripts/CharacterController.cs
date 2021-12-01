@@ -53,6 +53,7 @@ public class CharacterController : MonoBehaviour
         if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
         {
             myRigidBody.AddForce(transform.up * jumpForce);
+            myAnim.SetTrigger("jumping");
         }
 
 
@@ -72,9 +73,8 @@ public class CharacterController : MonoBehaviour
         sprintTimer = Mathf.Clamp(sprintTimer, 0.0f, maxSprint);
 
         myAnim.SetFloat("speed", newVelocity.magnitude);
-
         myAnim.SetBool("isOnGround", isOnGround);
-        myAnim.SetTrigger("jumping");
+       
     }
 
 
