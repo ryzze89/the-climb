@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class DeathBox : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.tag == "Player")
+        Debug.Log(9);
+        if (other.gameObject.tag == "Player")
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(1);
         }
